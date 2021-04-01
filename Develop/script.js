@@ -60,6 +60,15 @@ function generatePassword() {
     passwordChars += specCharsOptions
   }
   console.log(passwordChars)
+
+  let newPassword = ''
+  //explains Math.random https://www.codecademy.com/forum_questions/50c386a4a122749bc1006ca6
+  for (let i = 0; i < charAmount; i++) {
+    let i = Math.floor(Math.random() * passwordChars.length + 1)
+    newPassword += passwordChars[i]
+    console.log(newPassword)
+  }
+  return newPassword
 }
 
 // Add event listener to generate button
