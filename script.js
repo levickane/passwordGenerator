@@ -65,8 +65,9 @@ function generatePassword() {
   let newPassword = ''
   //explains Math.random https://www.codecademy.com/forum_questions/50c386a4a122749bc1006ca6
   for (let i = 0; i < charAmount; i++) {
-    //for some reason the +1 at the end of Math.random would return a char=undefined
-    //ever few password generations. Deleting the +1 solved the issue
+    //We're not using the +1 at the end of Math.random() because we're not starting at 0
+    //We're starting at 1. So there's no need to add the +1 at the end. If I do,
+    //every once in a while, there will be a char=undefined
     let char = Math.floor(Math.random() * passwordChars.length)
     newPassword += passwordChars[char]
     console.log(newPassword)
