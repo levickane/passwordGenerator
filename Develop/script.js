@@ -11,6 +11,7 @@ function writePassword() {
 }
 
 function generatePassword() {
+  //setting initial values
   let charAmount = 0
   let toLowerChars = false
   let toUpperChars = false
@@ -64,7 +65,9 @@ function generatePassword() {
   let newPassword = ''
   //explains Math.random https://www.codecademy.com/forum_questions/50c386a4a122749bc1006ca6
   for (let i = 0; i < charAmount; i++) {
-    let char = Math.floor(Math.random() * passwordChars.length + 1)
+    //for some reason the +1 at the end of Math.random would return a char=undefined
+    //ever few password generations. Deleting the +1 solved the issue
+    let char = Math.floor(Math.random() * passwordChars.length)
     newPassword += passwordChars[char]
     console.log(newPassword)
   }
