@@ -16,6 +16,11 @@ function generatePassword() {
   let toUpperChars = false
   let numberChars = false
   let specialChars = false
+  //character options
+  let lowerCharsOptions = 'abcdefghijklmnopqrstuvwxyz'
+  let upperCharsOptions = 'ABCDEFGHIJKLMNOPQRSTUVWSYZ'
+  let numCharsOptions = '0123456789'
+  let specCharsOptions = '!@#$%^&*()'
 
   charAmount = prompt(
     'What is the length of your desired password ( 8 < password > 128)'
@@ -39,7 +44,22 @@ function generatePassword() {
   specialChars = confirm(
     'Would you like to use special characters in your password?'
   )
-  console.log(specialChars)
+
+  //adding characters to the password string
+  let passwordChars = ''
+  if (toLowerChars) {
+    passwordChars += lowerCharsOptions
+  }
+  if (toUpperChars) {
+    passwordChars += upperCharsOptions
+  }
+  if (numberChars) {
+    passwordChars += numCharsOptions
+  }
+  if (specialChars) {
+    passwordChars += specCharsOptions
+  }
+  console.log(passwordChars)
 }
 
 // Add event listener to generate button
