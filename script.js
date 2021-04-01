@@ -32,7 +32,6 @@ function generatePassword() {
       'What is the length of your desired password ( 8 < password > 128'
     )
   }
-  console.log(charAmount)
 
   //confirming password criteria
   toLowerChars = confirm(
@@ -60,7 +59,6 @@ function generatePassword() {
   if (specialChars) {
     passwordChars += specCharsOptions
   }
-  console.log(passwordChars)
 
   let newPassword = ''
   //explains Math.random https://www.codecademy.com/forum_questions/50c386a4a122749bc1006ca6
@@ -70,7 +68,6 @@ function generatePassword() {
     //every once in a while, there will be a char=undefined
     let char = Math.floor(Math.random() * passwordChars.length)
     newPassword += passwordChars[char]
-    console.log(newPassword)
   }
   return newPassword
 }
