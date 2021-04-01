@@ -12,6 +12,10 @@ function writePassword() {
 
 function generatePassword() {
   let charAmount = 0
+  let toLowerChars = false
+  let toUpperChars = false
+  let numberChars = false
+  let specialChars = false
 
   charAmount = prompt(
     'What is the length of your desired password ( 8 < password > 128)'
@@ -23,6 +27,19 @@ function generatePassword() {
     )
   }
   console.log(charAmount)
+
+  //confirming password criteria
+  toLowerChars = confirm(
+    'Would you like to use lower case letters in your password?'
+  )
+  toUpperChars = confirm(
+    'Would you like to use UPPER CASE letters in your password?'
+  )
+  numberChars = confirm('Would you like to use numbers in your password?')
+  specialChars = confirm(
+    'Would you like to use special characters in your password?'
+  )
+  console.log(specialChars)
 }
 
 // Add event listener to generate button
