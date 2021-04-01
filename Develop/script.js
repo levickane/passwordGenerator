@@ -64,8 +64,8 @@ function generatePassword() {
   let newPassword = ''
   //explains Math.random https://www.codecademy.com/forum_questions/50c386a4a122749bc1006ca6
   for (let i = 0; i < charAmount; i++) {
-    let i = Math.floor(Math.random() * passwordChars.length + 1)
-    newPassword += passwordChars[i]
+    let char = Math.floor(Math.random() * passwordChars.length + 1)
+    newPassword += passwordChars[char]
     console.log(newPassword)
   }
   return newPassword
