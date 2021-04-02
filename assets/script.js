@@ -25,7 +25,10 @@ function generatePassword() {
   charAmount = prompt(
     'What is the length of your desired password ( 8 < password > 128)'
   )
-  while (charAmount < 8 || charAmount > 128) {
+
+  //to handle anything that isn't a number, use REGEX https://stackoverflow.com/questions/4434076/best-way-to-alphanumeric-check-in-javascript
+  while (charAmount < 8 || charAmount > 128 || !charAmount.match(/^[0-9]+$/)) {
+    console.log(charAmount)
     alert('Please pick a number between 8 and 128')
     charAmount = prompt(
       'What is the length of your desired password ( 8 < password > 128'
